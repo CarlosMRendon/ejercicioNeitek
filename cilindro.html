@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/esfera.css">
+    <title>cilindro</title>
+</head>
+<body>
+    <header class="grid-item">
+        <a href="index.html"><input type="button" value="regresar" class="boton"></a>
+        <h1>CILINDRO</h1>
+    </header>
+
+    <div class="wrapper">        
+        <div id="figura">
+            <figure>
+                <img src="./images/cilindro.png" alt="cilindro">
+            </figure>
+            <div id="info">
+                <p>
+                    un cilindro es una superficie de las denominadas cuádricas formada por el desplazamiento 
+                    paralelo de una recta llamada generatriz, a lo largo de una curva plana, denominada directriz.
+                    un cilindro se define de forma general como cualquier superficie reglada generada por una familia uniparamétrica de líneas paralelas.
+                </p>
+                <br>
+                <p> el <span>VOLUMEN y AREA</span> del cilindro de calcula obteniendo su radio y altura como bases</p>
+                <p>su volumen se calcula como v =pr²h y su area es a = 2pir(r+h)</p>
+            </div>
+        </div>
+        <div id="text">
+            <p>Ingresa el radio</p>
+            <input type="number" id="text_cilindro_radio">
+            <p>Ingresa la altura</p>
+            <input type="number" id="text_cilindro_altura">
+            <br>
+            <input type="button" value="a calcular!" class="boton" id="boton_resultado_cilindro">
+            <p id="resultado_cilindro">el resultado es:</p>
+        </div>
+    </div>
+    
+    <script src="./js/calculosCilindro.js"></script>
+</body>
+</html>

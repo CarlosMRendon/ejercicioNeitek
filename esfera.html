@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/esfera.css">
+    <title>esfera</title>
+</head>
+<body>
+    <header class="grid-item">
+        <a href="index.html"><input type="button" value="regresar" class="boton"></a>
+        <h1>ESFERA</h1>
+    </header>
+
+    <div class="wrapper">        
+        <div id="figura">
+            <figure>
+                <img src="./images/esfera.jpg" alt="esfera">
+            </figure>
+            <div id="info">
+                <p>
+                    La esfera (superficie esférica) es el conjunto de los puntos del espacio tridimensional que tienen 
+                    la misma distancia a un punto fijo denominado centro; tanto el segmento que une un punto con el centro, 
+                    como la longitud del segmento, se denomina radio. En este caso se genera al rotar una semicircunferencia, 
+                    usando como eje de rotación su diámetro.
+                </p>
+                <br>
+                <p> el <span>VOLUMEN y AREA</span> de la esfera de calcula obteniendo su radio como base</p>
+                <p>la formula del volumen es 4pir³/3 y su area es 4pir²</p>
+            </div>
+        </div>
+        <div id="text">
+            <p>Ingresa el radio</p>
+            <input type="number" id="text_esfera">
+            <br>
+            <input type="button" value="a calcular!" class="boton" id="boton_resultado_esfera">
+            <p id="resultado_esfera">el resultado es:</p>
+        </div>
+    </div>
+    
+    <script src="./js/calculosEsfera.js"></script>
+</body>
+</html>

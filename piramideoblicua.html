@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/esfera.css">
+    <title>piramide oblicua</title>
+</head>
+<body>
+    <header class="grid-item">
+        <a href="index.html"><input type="button" value="regresar" class="boton"></a>
+        <h1>PIRAMIDE OBLICUA</h1>
+    </header>
+
+    <div class="wrapper">        
+        <div id="figura">
+            <figure>
+                <img src="./images/piramideoblicua.jpg" alt="cono">
+            </figure>
+            <div id="info">
+                <p>
+                    Una pirámide oblicua es una pirámide que no es recta. Si la base de una pirámide 
+                    oblicua es un polígono regular, es posible que no todas sus caras laterales sean triángulos 
+                    isósceles. Es decir, alguna de sus caras laterales no es un triángulo isósceles
+                </p>
+                <br>
+                <p> el <span>VOLUMEN y AREA</span> de una piramide oblicua se cenesita saber su altura y las medidas de la base</p>
+                <p>su volumen se calcula como v =(Ab * h)/3 y su area ese calcula como At = Al +Ab donde abl s la sumatoria de sus areas laterales y Ab es el area de la base</p>
+            </div>
+        </div>
+        <div id="text">
+            <p>Ingresa la base1</p>
+            <input type="number" id="base1_piramide_oblicua">
+            <p>Ingresa la base2</p>
+            <input type="number" id="base2_piramide_oblicua">
+            <p>Ingresa la altura1</p>
+            <input type="number" id="text_piramide_oblicua_altura1">
+            <p>Ingresa la altura2</p>
+            <input type="number" id="text_piramide_oblicua_altura2">
+            <p>Ingresa la altura3</p>
+            <input type="number" id="text_piramide_oblicua_altura3">
+            <p>Ingresa la altura4</p>
+            <input type="number" id="text_piramide_oblicua_altura4">
+            <br>
+            <input type="button" value="a calcular!" class="boton" id="boton_resultado_piramide_oblicua">
+            <p id="resultado_piramide_oblicua">el resultado es:</p>
+        </div>
+    </div>
+    
+    <script src="./js/calculoPirObl.js"></script>
+</body>
+</html>

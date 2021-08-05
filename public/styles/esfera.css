@@ -1,0 +1,110 @@
+*{
+    margin: 0%;
+}
+body{
+    background-color:  #1F1F1F;
+    font-family: 'Spartan', sans-serif;
+}
+header{
+    background-color: #141414;
+    color: white;  
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(50px, auto);
+}
+h1{
+    text-align: center;
+}
+#figura{
+    margin-top: 10px;
+    padding: 1%;
+    margin-left: 9%;
+    display: inline-block;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+}
+figure{
+    width: 90%;
+    margin-left: 3%;
+}
+img{
+    width: 100%;
+    border: 5px solid cornflowerblue;
+    border-radius: 20px;
+    margin: auto;
+}
+#info{
+    margin-left: 8%;
+}
+#info>p{
+    width: 90%;
+}
+
+#text{
+    padding: 1%;
+    margin-left: 9%;
+    margin-top: 20px;
+    text-align: center;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+}
+.boton{
+    background-color: cornflowerblue;
+    border: solid cornflowerblue;
+    border-radius: 5px;
+    font-family: 'Spartan', sans-serif;
+    font-weight: 700;
+    color: whitesmoke;
+}
+
+#boton_resultado{
+    margin:  10px 0px;
+}
+#resultado{
+    height: 50px;
+}
+
+
+@media screen and (min-width: 1024px){
+    body{
+        
+    }
+    header{
+        margin-left: 0px;
+    }
+    .wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(50px, auto);
+    }
+   
+    a{
+    }
+    #figura{
+        width: 80%;
+    }
+    #info{
+        font-size: 16px;
+    }
+    figure{
+        width: 70%;
+        margin-left: 12%;
+    }
+    #text{
+        display: inline-block;
+        margin-top: 10px;
+        width: 80%;
+    }
+    #resultado{
+        height: 0px;
+    }
+    #boton_esfera{
+        margin:  20px 20px;
+    }
+
+}
+
