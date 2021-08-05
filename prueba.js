@@ -19,6 +19,10 @@ app.get ('/index.html', function (req, res) {
 app.get('/cilindro.html',(req,res) => {
     res.sendFile(__dirname + "/cilindro.html");
 });
+app.post("/cilindro.html", function (req, res) {
+    console.log(req.body.user.radio)
+    console.log(req.body.user.altura)
+});
 app.get('/esfera.html',(req,res) => {
     res.sendFile(__dirname + "/esfera.html");
 });
@@ -31,3 +35,9 @@ app.get('/piramideoblicua.html',(req,res) => {
 
 app.listen (3000);
 console.log('La aplicacion ejecutando en http://localhost:3000')
+
+
+
+
+
+
