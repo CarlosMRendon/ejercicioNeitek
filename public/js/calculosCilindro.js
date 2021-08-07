@@ -9,11 +9,30 @@ var resultadoCilindro = document.getElementById("resultado_cilindro");
 
 function cilindro()
 {
+    
     r = parseInt(radioCilindro.value);
     h = parseInt(alturaCilindro.value);
-    var area = 2*Math.PI*r*(r+h);
-    console.log(area);
-    var volumen = Math.PI* Math.pow(r,2) *h;
-    console.log(volumen);
-    resultadoCilindro.innerHTML = "el resultado es: <br/> Area: "+area + " <br/> Volumen"+ volumen;
+
+    if(r>0 && h>0){
+
+    
+    const data = {r,h};
+    const options={
+            method: 'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify(data)
+        };
+    
+    
+    fetch('/cilindro', options).then(res =>res.json())
+    .then(res =>{
+        resultadoCilindro.innerHTML = "el resultado es: <br/> Area: "+res.Area +"<br/>" +"Volumen:"+ res.Volumen;
+    }
+    
+    );
+    }else{
+        alert("no puedes ingtresar valores negativos");
+    }
 }

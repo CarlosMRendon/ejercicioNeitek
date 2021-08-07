@@ -10,7 +10,24 @@ var resultadoEsfera = document.getElementById("resultado_esfera");
 function esfera()
 {
     r = parseInt(radioesfera.value);
-    var area = 4 * Math.PI * Math.pow(r,2);
-    var volumen = (4 * Math.PI * Math.pow(r,3))/3;
-    resultadoEsfera.innerHTML = "el resultado es: <br/> Area: "+area +"<br/>" +"Volumen:"+ volumen;
+    const data = {r};
+    const options={
+            method: 'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify(data)
+        };
+    
+    
+    fetch('/esfera', options).then(res =>res.json())
+    .then(res =>{
+        resultadoEsfera.innerHTML = "el resultado es: <br/> Area: "+res.Area +"<br/>" +"Volumen:"+ res.Volumen;
+    }
+    
+    );
+    
+
+    
+    
 }
