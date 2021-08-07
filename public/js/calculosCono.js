@@ -9,9 +9,18 @@ function cono()
 {
     r = parseInt(radioCono.value);
     h = parseInt(alturaCono.value);
-    g = Math.sqrt(Math.pow(h,2)+ Math.pow(r,2));
-    console.log(g);
-    area = Math.PI * r + Math.PI * g;
-    volumen = Math.PI * Math.pow(r,2) * h / 3;
-    resultadoCono.innerHTML = "el resultado es :<br/> Area " + area + "<br/>" + "Volumen " + volumen;
+
+    const data = {r, h};
+    const options={
+        method: 'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify(data)
+    };
+
+    fetch('/cono', options).then(res =>res.json())
+    .then(res=>{
+        resultadoCono.innerHTML = "el resultado es: <br/> Area: "+res.Area +"<br/>" +"Volumen:"+ res.Volumen;
+    });
 }

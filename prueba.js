@@ -29,14 +29,23 @@ app.post("/cilindro", function (req, res) {
     const data = req.body;
     const r = data.r;
     const h = data.h;
-    var area = 2*Math.PI*r*(r+h);
-    var volumen = Math.PI* Math.pow(r,2) *h;
-    console.log(area);
-    console.log(volumen)
-    res.json({
-        Area: area,
-        Volumen: volumen
-    });
+    if(r>0 && h>0)
+    {
+        var area = 2*Math.PI*r*(r+h);
+        var volumen = Math.PI* Math.pow(r,2) *h;
+        console.log(area);
+        console.log(volumen)
+        res.json({
+            Area: area,
+            Volumen: volumen
+        });
+    }else{
+        res.json({
+            Area: 'no puedes usar valroes negativos',
+            Volumen: ''
+        });
+    }
+    
 
 });
 app.get('/esfera.html',(req,res) => {
@@ -46,20 +55,79 @@ app.post('/esfera', (req,res) =>{
     console.log(req.body.r );
     const data = req.body;
     const radio = req.body.r;
-    var area = 4 * Math.PI * Math.pow(radio,2);
-    var volumen = (4 * Math.PI * Math.pow(radio,3))/3;
-    console.log(area);
-    console.log(volumen);
+    if(radio>0){
+
+    
+        var area = 4 * Math.PI * Math.pow(radio,2);
+        var volumen = (4 * Math.PI * Math.pow(radio,3))/3;
+        console.log(area);
+        console.log(volumen);
+        res.json({
+            Area: area,
+            Volumen: volumen
+    });
+    }else{
+        res.json({
+            Area: 'no puedes usar valores negativos',
+            Volumen: ''
+        });
+    }
+});
+app.get('/conorecto.html',(req,res) => {
+    res.sendFile(__dirname + "/conorecto.html");
+});
+app.post('/cono',(req,res) =>{
+    console.log(req.body)
+    const data= req.body;
+    const r =data.r;
+    const h = data.h;
+    if(r>0 && h>0){
+        g = Math.sqrt(Math.pow(h,2)+ Math.pow(r,2));
+    console.log(g);
+    area = Math.PI * r + Math.PI * g;
+    volumen = Math.PI * Math.pow(r,2) * h / 3;
     res.json({
         Area: area,
         Volumen: volumen
     });
-})
-app.get('/conorecto.html',(req,res) => {
-    res.sendFile(__dirname + "/conorecto.html");
+    }else{
+        res.json({
+            Area: 'no puedes usar valores negativos',
+            Volumen: ''
+        })
+
+    }
 });
 app.get('/piramideoblicua.html',(req,res) => {
     res.sendFile(__dirname + "/piramideoblicua.html");
+});
+app.post('/piramide',(req,res)=>{
+    console.log(req.body);
+    const data = req.body;
+    const b1 = data.b1;
+    const b2 = data.b2;
+    const h1 = data.h1;
+    const h2 = data.h2;
+    const h3 = data.h3;
+    const h4 = data.h4;
+    if(b1>0 && b2>0 && h1>0 && h2>0 && h3>0 && h4>0){
+        areal = ((b1 *h1) / 2) + ((b2 * h2) / 2) + ((b1 * h3) / 2) + ((b2 * h4) / 2);
+        areab = b1 * b2 ;
+        areat = areal + areab;
+        volumen = areab * h2 / 3;
+        console.log(areal);
+        console.log(areab);
+        console.log(areat);
+        res.json({
+            Area: areat,
+            Volumen: volumen
+        });
+    }else{
+        res.json({
+            Area: 'no puedes usar valores negativos' ,
+            Volumen: ''
+        });
+    }
 });
 
 app.listen (3000);

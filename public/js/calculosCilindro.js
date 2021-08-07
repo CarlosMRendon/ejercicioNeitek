@@ -13,7 +13,7 @@ function cilindro()
     r = parseInt(radioCilindro.value);
     h = parseInt(alturaCilindro.value);
 
-    if(r>0 && h>0){
+    
 
     
     const data = {r,h};
@@ -32,7 +32,5 @@ function cilindro()
     }
     
     );
-    }else{
-        alert("no puedes ingtresar valores negativos");
-    }
+    
 }

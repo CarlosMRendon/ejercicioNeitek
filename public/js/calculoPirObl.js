@@ -16,9 +16,20 @@ function piraObli()
     h2 = parseInt(altura2.value);
     h3 = parseInt(altura3.value);
     h4 = parseInt(altura4.value);
-    areal = ((b1 *h1) / 2) + ((b2 * h2) / 2) + ((b1 * h3) / 2) + ((b2 * h4) / 2);
-    areab = b1 * b2 ;
-    areat = areal + areab;
-    volumen = areab * h2 / 3;
-    resultadoPirOb.innerHTML = "el resultado es: <br/> Area:" + areat + "<br/> Volumen:" + volumen;
+
+    const data ={b1,b2,h1,h2,h3,h4};
+    const options={
+        method: 'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify(data)
+    };
+
+    fetch('/piramide', options).then(res =>res.json())
+    .then(res=>{
+        resultadoPirOb.innerHTML = "el resultado es: <br/> Area: "+res.Area +"<br/>" +"Volumen:"+ res.Volumen;
+    })
+
+    
 }
